@@ -1,0 +1,120 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Full-page Slideshow */
+.slideshow-container {
+  height: 100vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width */
+  overflow: hidden;
+  position: relative;
+}
+
+.mySlides {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.mySlides.active {
+  opacity: 1;
+}
+
+/* Round Navigation Buttons */
+.prev, .next {
+  position: fixed;
+  bottom: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  font-size: 29px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.prev {
+  right: 120px;
+}
+
+.next {
+  right: 20px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Information button */
+.info-button {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  font-size: 33px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  visibility: hidden; /* Hidden by default */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Hover effect with tooltip */
+.info-button:hover::after {
+  content: attr(data-message); /* Dynamically set content */
+  position: absolute;
+  bottom: 50px;
+  left: 100%;
+  transform: translateX(100%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  white-space: nowrap;
+  z-index: 3;
+}
+
+/* Text field styles */
+    .text-container {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      width: 50%; /* Right half of the image */
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.5);
+      color: black;
+      font-size: 1.5rem;
+      text-align: center;
+      transform: translateY(-50%);
+      display: none; /* Hidden by default */
+  }
+
+  .text-container.active {
+      display: block; /* Show only on active slides */
+  }
