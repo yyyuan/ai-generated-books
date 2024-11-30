@@ -1,3 +1,10 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
 /* General Styles */
 * {
   margin: 0;
@@ -34,7 +41,7 @@
 .prev, .next {
   position: fixed;
   bottom: 20px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: #4377d0;
   color: white;
   width: 75px;
   height: 75px;
@@ -59,7 +66,7 @@
 }
 
 .prev:hover, .next:hover {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: #1238aa;
 }
 
 /* Information button */
@@ -67,7 +74,8 @@
   position: absolute;
   bottom: 20px;
   left: 20px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: #4377d0;
+  border-color:#4377d0 ;
   color: white;
   width: 75px;
   height: 75px;
@@ -81,40 +89,129 @@
   z-index: 2;
   visibility: hidden; /* Hidden by default */
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
-/* Hover effect with tooltip */
-.info-button:hover::after {
-  content: attr(data-message); /* Dynamically set content */
+.info-button:hover{
+  background-color: #1238aa;
+  border-color:#1238aa ;
+}
+
+/* Hover effect with tooltip including an image */
+.info-button:hover .hover-box {
+  display: flex; /* Make the container visible and a flexbox */
+  align-items: center; /* Vertically align image and text */
   position: absolute;
-  bottom: 50px;
-  left: 100%;
-  transform: translateX(100%);
-  background-color: rgba(0, 0, 0, 0.8);
-  color: white;
-  padding: 10px;
+  top: -50px; /* Adjust as needed */
+  left: 120%; /* Position to the right of the button */
+  background-color: rgba(255, 255, 255, 1);
+  color: black;
+  padding: 10px 50px 10px 10px;
   border-radius: 5px;
-  font-size: 14px;
+  font-size: 16px;
   white-space: nowrap;
   z-index: 3;
+  gap: 10px; /* Add space between image and text */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+}
+
+/* Tooltip image styling */
+.hover-box img {
+  width: 50px; /* Adjust as needed */
+  height: 50px; /* Adjust as needed */
+  object-fit: cover; /* Ensure the image maintains aspect ratio */
+  border-radius: 5px; /* Optional rounded corners */
+  margin: 15px;
 }
 
 /* Text field styles */
-    .text-container {
-      position: absolute;
-      top: 50%;
-      right: 0;
-      width: 50%; /* Right half of the image */
-      padding: 20px;
-      background: rgba(255, 255, 255, 0.5);
-      color: black;
-      font-size: 1.5rem;
-      text-align: center;
-      transform: translateY(-50%);
-      display: none; /* Hidden by default */
+.text-container {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 42%; /* Right half of the image */
+    padding: 50px;
+    background: rgba(255, 255, 255, 0.5);
+    color: black;
+    font-size: 1.7rem;
+    text-align: center;
+    transform: translateY(-50%);
+    display: none; /* Hidden by default */
   }
 
   .text-container.active {
-      display: block; /* Show only on active slides */
+    display: block; /* Show only on active slides */
   }
+
+  /* Home button styling */
+.home-button {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #4CAF50; /* Green button */
+  color: white;
+  font-size: 26px;
+  padding: 20px 30px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  z-index: 3;
+}
+
+.home-button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+
+
+/* Full-screen landing page */
+.landing-page {
+  display: flex;
+  flex-direction: row; /* Horizontally align sections */
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+  margin: 0;
+  overflow: hidden;
+}
+
+/* Individual book sections */
+.book-section {
+  flex: 1; /* Divide equally among sections */
+  position: relative;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out; /* Subtler scale effect */
+}
+
+.book-section:hover {
+  transform: scale(1.05); /* Slightly subtler scaling */
+}
+
+/* Text overlay on book sections */
+.book-overlay {
+  position: absolute;
+  bottom: 5%;
+  width: 100%;
+  text-align: center;
+  background: rgba(255, 255, 255, 1);
+  color: black;
+  padding: 20px;
+  font-size: 1.5rem;
+  transition: background 0.3s ease-in-out;
+}
+
+.book-link {
+  display: block; /* Makes the link a block element */
+  width: 100%;
+  height: 100%;
+  text-decoration: none; /* Remove underline from links */
+  color: inherit; /* Inherit text color */
+}
+
+.book-link:hover .book-section {
+  transform: scale(1.02); /* Maintain the hover effect */
+}

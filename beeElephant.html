@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>The Bee and the Elephant</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="slideshow-container">
+        <!-- Cover -->
+        <div class="mySlides active" style="background-image: url('images/beeElephant/page0.jpeg');">
+        </div>
+        <!-- Page 1 -->
+        <div class="mySlides" style="background-image: url('images/beeElephant/page1.jpeg');">
+            <div class="text-container">"I am lost," said Little Bee. "I cannot find my home!" 
+                "Can you please help me, Mr. Elephant?"                
+            </div>
+        </div>
+        <!-- Page 2 -->
+        <div class="mySlides" style="background-image: url('images/beeElephant/page2.jpeg');">
+            <div class="text-container">"Is this nest your home, Little Bee?" The elephant asked.
+            </div>
+        </div>
+        <!-- Page 3 -->
+        <div class="mySlides" style="background-image: url('images/beeElephant/page3.jpeg');">
+            <div class="text-container">"Oh no!" cried Little Bee. "This is a bird’s home."
+            </div>
+        </div>
+        <!-- Page 4 -->
+        <div class="mySlides" style="background-image: url('images/beeElephant/page4.jpeg');">
+            <div class="text-container">"Is this cave your home?" asked the elephant.
+            </div>
+        </div>
+        <!-- Page 5 -->
+        <div class="mySlides" style="background-image: url('images/beeElephant/page5.jpeg');">
+            <div class="text-container">"Oh no! This is a bat’s home."</div>
+        </div>
+        <!-- Page 6 -->
+        <div class="mySlides" style="background-image: url('images/beeElephant/page6.jpeg');">
+            <div class="text-container">"Is this hive your home, Little Bee?"
+            </div>
+        </div>        
+        <!-- Page 7 -->
+        <div class="mySlides" style="background-image: url('images/beeElephant/page7.jpeg');">
+            <div class="text-container">"Oh yes!" said Little Bee happily. "This is my home."
+            </div>
+        </div>
+        <!-- Page 8 -->
+        <div class="mySlides" style="background-image: url('images/beeElephant/page8.jpeg');">
+            <div class="text-container">"Thank you for helping me, Mr. Elephant."</div>
+        </div>                               
+    </div>
+    <!-- Navigation buttons -->
+    <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
+    <button class="next" onclick="plusSlides(1)">&#10095;</button>
+    <!-- Information button -->
+    <button class="info-button">
+        i
+        <div class="hover-box" style="display: none;">
+            <img src="" alt="Info Image" id="info-image">
+            <span id="info-text"></span>
+        </div>
+    </button>
+    <button class="home-button" style="display: none;" onclick="goHome()">Home</button>
+    <script src="js/slideshow2.js"></script>
+</body>
+
+</html>
